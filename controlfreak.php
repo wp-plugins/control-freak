@@ -5,7 +5,7 @@ Plugin URI: https://github.com/jacobbuck/wp-control-freak
 Description: A handy little plugin which tweeks some of the core features and settings in WordPress to make it more suitable for your needs.
 Author: Jacob Buck
 Author URI: http://jacobbuck.co.nz/
-Version: 3.0a11
+Version: 3.0a12
 */
 
 class ControlFreak {
@@ -258,7 +258,7 @@ class ControlFreak {
 	
 	private function settings_init () {
 		// register plugin styles
-		wp_register_style("control_freak_settings", WP_PLUGIN_URL . "/wp-control-freak/settings.css");
+		wp_register_style("control_freak_settings", plugins_url("settings.css", __FILE__));
 		// save settings 
 		if (isset($_POST["controlfreak"]["save"]) || isset($_POST["controlfreak"]["revert"]) || isset($_POST["controlfreak"]["import"]["save"])) {
 			// get new options
@@ -287,7 +287,7 @@ class ControlFreak {
 	}
 	
 	public function add_settings_link ($links, $file) {
-		if ($file == "wp-control-freak/controlfreak.php") {
+		if (strstr(__FILE__, $file)) {
 			$links[] = "<a href=\"options-general.php?page=control-freak\">".__("Settings")."</a>";
 		}
 		return $links;
