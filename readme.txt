@@ -20,4 +20,4 @@ A handy little plugin which tweaks some of the core features and settings in Wor
 
 == Screenshots ==
 
-1. http://f.cl.ly/items/0f0k3X2A2e0S2K0R0m2W/control-freak-screenshot1.png
+1. Settings Page
