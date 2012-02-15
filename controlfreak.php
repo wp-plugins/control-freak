@@ -5,7 +5,7 @@ Plugin URI: https://github.com/jacobbuck/wp-control-freak
 Description: A handy little plugin which tweeks some of the core features and settings in WordPress to make it more suitable for your needs.
 Author: Jacob Buck
 Author URI: http://jacobbuck.co.nz/
-Version: 3.0a12
+Version: 3.0a13
 */
 
 class ControlFreak {
@@ -52,14 +52,16 @@ class ControlFreak {
 				}
 			}
 			if ($this->options["posts"]["taxonomies"]["category"] == "off") {
-				$wp_taxonomies["category"]->public = false;
-				$wp_taxonomies["category"]->show_ui = false;
-				$wp_taxonomies["category"]->show_in_nav_menus = false;
+				foreach ($wp_taxonomies["category"]->object_type as $key => $val) {
+					if ($val == "post")
+						unset($wp_taxonomies["category"]->object_type[$key]);
+				}
 			}
 			if ($this->options["posts"]["taxonomies"]["post_tag"] == "off") {
-				$wp_taxonomies["post_tag"]->public = false;
-				$wp_taxonomies["post_tag"]->show_ui = false;
-				$wp_taxonomies["post_tag"]->show_in_nav_menus = false;
+				foreach ($wp_taxonomies["post_tag"]->object_type as $key => $val) {
+					if ($val == "post")
+						unset($wp_taxonomies["post_tag"]->object_type[$key]);
+				}
 			}
 		} else if ($this->options["posts"]["enabled"] == "off") {
 			$wp_post_types["post"]->public = false;
@@ -67,14 +69,16 @@ class ControlFreak {
 			$wp_post_types["post"]->show_in_nav_menus = false;
 			$wp_post_types["post"]->show_in_menu = false;
 			$wp_post_types["post"]->show_in_admin_bar = false;
-			$wp_taxonomies["category"]->public = false;
-			$wp_taxonomies["category"]->show_ui = false;
-			$wp_taxonomies["category"]->show_in_nav_menus = false;
-			$wp_taxonomies["post_tag"]->public = false;
-			$wp_taxonomies["post_tag"]->show_ui = false;
-			$wp_taxonomies["post_tag"]->show_in_nav_menus = false;
-		}
-				
+			foreach ($wp_taxonomies["category"]->object_type as $key => $val) {
+				if ($val == "post")
+					unset($wp_taxonomies["category"]->object_type[$key]);
+			}
+			foreach ($wp_taxonomies["post_tag"]->object_type as $key => $val) {
+				if ($val == "post")
+					unset($wp_taxonomies["post_tag"]->object_type[$key]);
+			}
+			
+		}				
 		// Pages
 		if ($this->options["pages"]["enabled"] == "on") {
 			if ($this->options["pages"]["supports"] && count($this->options["posts"]["supports"])) {
