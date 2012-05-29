@@ -3,7 +3,7 @@ Contributors: jacobbuck
 Tags: admin, dashboard, hacks, posts, pages, widgets
 Requires at least: 3.2
 Tested up to: 3.4
-Stable tag: 3.1 alpha 2
+Stable tag: 3.1 alpha 3
 
 A handy little plugin which tweaks some of the core features and settings in WordPress to make it more suitable for your needs.
 
@@ -23,17 +23,21 @@ A handy little plugin which tweaks some of the core features and settings in Wor
 
 == Changelog ==
 
-= 3.1 alpha 2 =
+Please note users updating from 3.0 to 3.1, your settings will reset to default.
 
-Please note users updating from 3.0 will reset your settings to default.
+= 3.1 alpha 3 =
+
+* Bug Fix: Fixed an issue with plugin crashing on update.
+* Bug Fix: QuickPress Dashboard Widget disabling.
+
+= 3.1 alpha 2 =
 
 * Enhancements: No longer storing options as JSON string.
 
 = 3.1 alpha 1 =
 
-* New Features:
-	* Updates to Posts and Pages Supports settings - new: Page Attributes, Post Formats and Thumbnails.
-	* Added Widgets management.
-	* Added Privacy settings to posts types and taxonomies.
-	* Added Categories and Post Tags sections.
-	* Added Supports to Media.
+* New: Updates to Posts and Pages Supports settings - Page Attributes, Post Formats and Thumbnails
+* New: Enable/disable default Widgets
+* New: Privacy settings to posts types and taxonomies.
+* New: Categories and Post Tags sections.
+* New: Supports to Media.
