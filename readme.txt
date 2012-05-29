@@ -1,23 +1,35 @@
 === Plugin Name ===
 Contributors: jacobbuck
-Tags: admin, dashboard, hacks
+Tags: admin, dashboard, hacks, posts, pages, widgets
 Requires at least: 3.2
-Tested up to: 3.3.1
-Stable tag: 3.0a13
+Tested up to: 3.4
+Stable tag: 3.1 alpha 1
 
 A handy little plugin which tweaks some of the core features and settings in WordPress to make it more suitable for your needs.
 
 == Description ==
 
-- Enable or Disable Posts, Categories, Post Tags, Links, Pages and Comments
-- Remove default supports on Posts and Pages
-- Enable or Disable Dashboard Widgets
-- Move Pages above Posts in admin menu
-- Force image cropping on Medium and Large sizes
-- Disable update checking
-- Show private and draft pages in parent selector
-- And more...
+* Enable/disable Posts, Categories, Post Tags, Links, Pages and Comments
+* Enable/disable Dashboard Widgets and Widgets
+* Modify Posts, Pages and Media supports.
+* Force image cropping on Medium and Large sizes
+* Disable update checking
+* Show non-published pages in parent selector
+* And more...
 
 == Screenshots ==
 
 1. Settings Page
+
+== Changelog ==
+
+= 3.1 alpha 1 =
+
+Please note users updating from 3.0 will reset your settings to default.
+
+* New Features:
+	* Updates to Posts and Pages Supports settings - new: Page Attributes, Post Formats and Thumbnails
+	* Added Widgets management.
+	* Added Privacy settings to posts types and taxonomies.
+	* Added Categories and Post Tags sections.
+	* Added Supports to Media
